@@ -18,9 +18,9 @@ services:
     ports:
       - "7777:7777"
     environment:
-      - MONGODB_URI=mongodb://mongo:MOZnxIqDzbEuLZkqFLsPZEyIQpDRUSRA@mongodb.railway.internal:27017
-      - NODE_ENV=development
-      - PORT=7777
+      - MONGODB_URI=${MONGODB_URI}
+      - NODE_ENV=${NODE_ENV}
+      - PORT=${PORT}
     depends_on:
       mongo:
         condition: service_healthy
