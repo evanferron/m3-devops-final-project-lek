@@ -5,8 +5,10 @@ services:
       dockerfile: src/server/Dockerfile.server
     ports:
       - "7777:7777"
-    env_file:
-      - .env
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/organizer
+      - NODE_ENV=development
+      - PORT=7777
     depends_on:
       - mongo
 
